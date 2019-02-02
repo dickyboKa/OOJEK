@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class OojekNewsRoute extends StatelessWidget {
   final String newsTitle;
   final String newsContent;
-  final Color backgroundImage;
+  final String backgroundImage;
 
   const OojekNewsRoute(
       {Key key,
@@ -18,20 +18,24 @@ class OojekNewsRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 200,
-        padding: EdgeInsets.only(left: 10.0, right: 10.0),
+        height: 210,
+        padding: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 15.0),
         child: Container(
-            color: backgroundImage,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(backgroundImage),
+                  fit: BoxFit.cover),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                    padding: EdgeInsets.only(left: 10.0, top: 10.0),
+                    padding: EdgeInsets.only(left: 10.0, top: 15.0),
                     child: Text("OO-NEWS",
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 16.0))),
                 Padding(
                     padding:
@@ -39,8 +43,8 @@ class OojekNewsRoute extends StatelessWidget {
                     child: Text(newsTitle,
                         textAlign: TextAlign.right,
                         style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black87,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                             fontSize: 15.0))),
                 Padding(
                     padding: EdgeInsets.only(left: 10.0, bottom: 5.0),
@@ -52,8 +56,8 @@ class OojekNewsRoute extends StatelessWidget {
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
                                     fontSize: 12.0))),
                         Container(
                           width: 70.0,
@@ -73,7 +77,7 @@ class OojekNewsRoute extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.black87,
+                                      color: Colors.white,
                                       fontSize: 15.0))),
                         )
                       ],

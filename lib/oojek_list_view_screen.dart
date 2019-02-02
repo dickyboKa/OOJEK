@@ -5,10 +5,11 @@ import 'package:copy_gojek/oojek_news_route.dart';
 
 class OojekListViewScreen extends StatelessWidget {
 
+
   String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
-  Widget _buildCatgeoryWidget() {
+  Widget _buildCatgeoryWidget(List<String> images, List<String> titles) {
     return ListView.builder(
-      itemCount: 3,
+      itemCount: 7,
       itemBuilder: (BuildContext context, int index) {
         if (index == 0) {
           return OopayRoute();
@@ -17,8 +18,8 @@ class OojekListViewScreen extends StatelessWidget {
         } else {
           return OojekNewsRoute(
             newsContent: loremIpsum,
-            backgroundImage: Colors.grey,
-            newsTitle: "NBA ALL STAR",
+            backgroundImage: images[index - 2],
+            newsTitle: titles[index - 2],
           );
           /*
           return Card(
@@ -33,12 +34,14 @@ class OojekListViewScreen extends StatelessWidget {
     );
   }
 
+  final newsImages = <String>["assets/anthony_davis.jpg", "assets/bill_gates.jpg", "assets/kd_and_lebron.jpg", "assets/saints_lose_to_rams.jpg", "assets/true_detective.jpg"];
+  final newsTitles = <String>["Anthony Davis To Lakers", "Bill Gates To Fix Toilet", "KD vs Lebron", "Saints Lose to Rams", "True Detective Return"];
   @override
   Widget build(BuildContext context) {
     final listView = Container(
         color: Colors.white,
         padding: EdgeInsets.all(2.0),
-        child: _buildCatgeoryWidget());
+        child: _buildCatgeoryWidget(newsImages, newsTitles));
 
     final appBar = AppBar(
       backgroundColor: Colors.white,
