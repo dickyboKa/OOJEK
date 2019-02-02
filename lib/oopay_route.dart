@@ -32,7 +32,7 @@ Widget oopayBalance() {
       ));
 }
 
-Widget opayMenuItem(String menu_text, IconData menu_icon)
+Widget opayMenuItem(String menuText, IconData menuIcon)
 {
   return Container(
     padding: EdgeInsets.only(top: 22.0, left: 12.0, right: 12.0),
@@ -40,9 +40,9 @@ Widget opayMenuItem(String menu_text, IconData menu_icon)
       children: <Widget>[
         Padding(
           padding: EdgeInsets.only(bottom: 5.0),
-          child: Icon(menu_icon, color: Colors.white, size: 40.0),
+          child: Icon(menuIcon, color: Colors.white, size: 40.0),
         ),
-        Text(menu_text, style: TextStyle(
+        Text(menuText, style: TextStyle(
           fontWeight: FontWeight.w500, color: Colors.white, fontSize: 12.0)),
       ],
     )
