@@ -60,7 +60,7 @@ class OojekMenuRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.all(8.0),
-        height: 220,
+        height: 230,
         child: Column(
           children: <Widget>[firstMenu(), secondMenu()],
         ));
