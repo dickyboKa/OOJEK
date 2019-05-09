@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-/*
+
 class OojekMenuRoute extends StatefulWidget {
   const OojekMenuRoute();
   @override
   _OojekMenuRouteState createState() => _OojekMenuRouteState();
 }
-*/
 
-class OojekMenuRoute extends StatelessWidget {
+
+class _OojekMenuRouteState extends State<OojekMenuRoute> {
   var dicky = "OO-RIDE";
   Widget firstMenu() {
     return Container(
@@ -46,7 +46,9 @@ class OojekMenuRoute extends StatelessWidget {
         child: InkWell(
           onTap: () {
             print("Dicky");
+            setState(() {
               dicky = "DICKY";
+            });
           },
           child: Column(
             children: <Widget>[
